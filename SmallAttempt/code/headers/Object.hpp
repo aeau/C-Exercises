@@ -23,6 +23,8 @@ public:
 		return false; 
 	}
 
+	void what() {}
+
 public:
 
 	Vector2 position;

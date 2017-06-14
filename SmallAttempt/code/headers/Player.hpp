@@ -1,6 +1,7 @@
 #ifndef __PLAYER_HEADER__
 #define __PLAYER_HEADER__
 
+#include <sstream>
 #include "Object.hpp"
 
 class Player : Object

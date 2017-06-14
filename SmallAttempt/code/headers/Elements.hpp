@@ -3,8 +3,12 @@
 
 #include <memory>
 #include <vector>
-#include "Object.hpp"
 #include <windows.h>
+#include <chrono>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include "Object.hpp"
 
 class Object;
 
@@ -23,10 +27,14 @@ public:
 		return instance;
 	}
 
+	float deltatime;
+	std::condition_variable thread_conditional;
+
 private:
 
-	Elements() {
-
+	Elements() 
+	{
+		starting_time = std::chrono::system_clock::now().time_since_epoch();
 		//SetQuit(false);
 	};
 
@@ -37,8 +45,12 @@ private:
 
 	void UpdateMap();
 
-	std::vector <char> map;
-	std::vector <Object*>  game_objects;
+	std::vector <char>			map;
+	std::vector <Object*>		game_objects;	
+	std::chrono::duration<double, std::milli>	starting_time;
+	std::chrono::duration<double, std::milli>	current_time;
+	std::chrono::duration<double, std::milli>	last_udpate;
+
 
 	/*std::shared_ptr < Material >        material_in_use;
 	Camera_GameObject *                 camera_in_game;
