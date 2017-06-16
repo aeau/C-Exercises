@@ -2,20 +2,24 @@
 #define __MAP_HEADER__
 
 #include <vector>
-#include "Object.hpp"
+#include <iostream>
 
-class Map : Object
+class Map
 {
 public:
+	const char EMPTY_CHARACTER = '.';
 
-	std::vector<int> map;
+	std::vector <char> map;
+	int height;
+	int width;
 
 public:
-	Map();
+	Map(int height, int width);
 	~Map();
 
-	virtual bool Update() override;
-
+	virtual bool Update();
+	virtual void PrintMap();
+	virtual void SetObjectInPosition(char obj, int x, int y);
 private:
 
 };

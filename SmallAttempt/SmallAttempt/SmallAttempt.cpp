@@ -4,9 +4,13 @@
 #include "stdafx.h"
 #include "../code/headers/Vector2.hpp"
 #include "../code/headers/Player.hpp"
+#include "../code/headers/Wall.hpp"
+#include "../code/headers/Map.hpp"
 
 #include <iostream>
 #include <string>
+#include <random>
+#include <cmath>
 //using namespace std;
 
 using std::cin;
@@ -15,28 +19,20 @@ using std::endl;
 using std::string;
 using std::getline;
 
+
+
 int main()
 {
-	Vector2 a = Vector2(0.7f, 2.5f);
-	Vector2 b = Vector2(1.4f, 3.0f);
+
+	/*Vector2 a = Vector2(Elements::dist(random_generator), dist(random_generator));
+	Vector2 b = Vector2(dist(random_generator), dist(random_generator));
 	Vector2 c = Vector2();
 
 	c = b * 0.1f;
-
 	cout << "Vector A, x and y values are: " << a.x << ", " << a.y << endl;
 	cout << "Vector B, x and y values are: " << b.x << ", " << b.y << endl;
-	cout << "Vector C, x and y values are: " << c.x << ", " << c.y << endl << endl;
+	cout << "Vector C, x and y values are: " << c.x << ", " << c.y << endl << endl;*/
 
-
-	Player p = Player();
-	Elements::getInstance().CreateMap();
-	Elements::getInstance().GameLoop();
-
-
-
-
-
-	////char f = ' ';
 	//std::string f = "";
 	//int pressed_key = std::getchar();
 
@@ -48,6 +44,21 @@ int main()
 	//	std::cout << "your number is " << f << std::endl;
 	//}
 	////std::cin >> f;
+
+	for (int i = 0; i < 10; i++)
+	{
+		Wall * w = new Wall(Elements::rand_pos(), Elements::rand_pos());
+		//walls.push_back(w);
+	}
+
+	/*Wall w1 = Wall(rand_pos(), rand_pos());
+	Wall w2 = Wall(rand_pos(), rand_pos());*/
+	Player p = Player();
+	std::shared_ptr<Map> new_map(new Map(Elements::getInstance().WIDTH, Elements::getInstance().HEIGHT));
+	Elements::getInstance().RegisterMap(new_map);
+	//Elements::getInstance().CreateMap();
+	Elements::getInstance().GameLoop();
+	
     return 0;
 }
 

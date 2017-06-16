@@ -1,17 +1,17 @@
 #include "../headers/Player.hpp"
 
-Player::Player()
+Player::Player() : Object()
 {
 	my_symbol = '@';
 	position = Vector2();
-	Elements::getInstance().RegisterObject(this);
+	//Elements::getInstance().RegisterObject(this);
 }
 
-Player::Player(int x, int y)
+Player::Player(int x, int y) : Object()
 {
 	position = Vector2(x, y);
 	my_symbol = '@';
-	Elements::getInstance().RegisterObject(this);
+	//Elements::getInstance().RegisterObject(this);
 }
 
 Player::~Player()
@@ -37,6 +37,10 @@ bool Player::Update()
 	{
 		Elements::getInstance().thread_conditional.notify_one();
 		return true;
+	}
+	else if (action == "quit")
+	{
+		//Elements::getInstance().UnregisterObject(element_index);
 	}
 	else if (action == "e")
 	{

@@ -12,23 +12,22 @@ class Object
 {
 public:
 
-	Object()
-	{
-		//Elements::getInstance().RegisterObject(this);
-	}
+	Object();
 
-	~Object() {}
-	virtual bool Update() 
+	~Object();
+	inline virtual bool Update() 
 	{ 
 		return false; 
 	}
-
-	void what() {}
 
 public:
 
 	Vector2 position;
 	char my_symbol;
+
+protected:
+
+	int element_index;
 
 };
 #endif //__OBJECT_HEADER__
