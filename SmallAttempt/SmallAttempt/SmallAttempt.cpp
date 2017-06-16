@@ -6,6 +6,8 @@
 #include "../code/headers/Player.hpp"
 #include "../code/headers/Wall.hpp"
 #include "../code/headers/Map.hpp"
+#include "../code/headers/tree/Tree.hpp"
+#include "../code/headers/Room.hpp"
 
 #include <iostream>
 #include <string>
@@ -33,31 +35,38 @@ int main()
 	cout << "Vector B, x and y values are: " << b.x << ", " << b.y << endl;
 	cout << "Vector C, x and y values are: " << c.x << ", " << c.y << endl << endl;*/
 
-	//std::string f = "";
-	//int pressed_key = std::getchar();
+	Room * r = new Room(0, 0, 60, 25);
 
-	//cout << pressed_key << endl;
+	Tree * t = new Tree();
+	t->CreateDungeon(5, r);
+	t->FillMainMap();
+	t->PrintMap();
 
-	//while (f != "exit")
-	//{
-	//	std::getline(std::cin, f);
-	//	std::cout << "your number is " << f << std::endl;
-	//}
-	////std::cin >> f;
+	std::string f = "";
+	int pressed_key = std::getchar();
 
-	for (int i = 0; i < 10; i++)
+	cout << pressed_key << endl;
+
+	while (f != "exit")
 	{
-		Wall * w = new Wall(Elements::rand_pos(), Elements::rand_pos());
-		//walls.push_back(w);
+		std::getline(std::cin, f);
+		std::cout << "your number is " << f << std::endl;
 	}
+	//std::cin >> f;
 
-	/*Wall w1 = Wall(rand_pos(), rand_pos());
-	Wall w2 = Wall(rand_pos(), rand_pos());*/
-	Player p = Player();
-	std::shared_ptr<Map> new_map(new Map(Elements::getInstance().WIDTH, Elements::getInstance().HEIGHT));
-	Elements::getInstance().RegisterMap(new_map);
-	//Elements::getInstance().CreateMap();
-	Elements::getInstance().GameLoop();
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	Wall * w = new Wall(Elements::rand_pos(), Elements::rand_pos());
+	//	//walls.push_back(w);
+	//}
+
+	///*Wall w1 = Wall(rand_pos(), rand_pos());
+	//Wall w2 = Wall(rand_pos(), rand_pos());*/
+	//Player p = Player();
+	//std::shared_ptr<Map> new_map(new Map(Elements::getInstance().WIDTH, Elements::getInstance().HEIGHT));
+	//Elements::getInstance().RegisterMap(new_map);
+	////Elements::getInstance().CreateMap();
+	//Elements::getInstance().GameLoop();
 	
     return 0;
 }

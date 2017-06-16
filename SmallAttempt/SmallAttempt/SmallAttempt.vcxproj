@@ -151,6 +151,7 @@
     <ClInclude Include="..\code\headers\Object.hpp" />
     <ClInclude Include="..\code\headers\Player.hpp" />
     <ClInclude Include="..\code\headers\Room.hpp" />
+    <ClInclude Include="..\code\headers\tree\Node.hpp" />
     <ClInclude Include="..\code\headers\tree\Tree.hpp" />
     <ClInclude Include="..\code\headers\Vector2.hpp" />
     <ClInclude Include="..\code\headers\Wall.hpp" />
