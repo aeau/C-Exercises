@@ -35,10 +35,10 @@ int main()
 	cout << "Vector B, x and y values are: " << b.x << ", " << b.y << endl;
 	cout << "Vector C, x and y values are: " << c.x << ", " << c.y << endl << endl;*/
 
-	Room * r = new Room(0, 0, 60, 25);
+	Room * r = new Room(0, 0, 80, 40);
 
 	Tree * t = new Tree();
-	t->CreateDungeon(5, r);
+	t->CreateDungeon(10, r);
 	t->FillMainMap();
 	t->PrintMap();
 

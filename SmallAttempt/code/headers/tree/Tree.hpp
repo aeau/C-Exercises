@@ -31,7 +31,8 @@ public:
 
 	void FillMainMap()
 	{
-		std::vector<Room*> leaves = root->GetLeaves();
+		std::vector<Room *> leaves = root->GetLeaves();
+		std::vector<Room *> corridors = root->GetCorridors();
 		main_container = root->main;
 		
 		for (std::vector<Room *>::iterator it = leaves.begin(); it != leaves.end(); ++it)
@@ -50,9 +51,29 @@ public:
 				}
 			}
 		}
+
+		for (std::vector<Room *>::iterator it = corridors.begin(); it != corridors.end(); ++it)
+		{
+			if ((*it) != nullptr)
+			{
+				int _init_x = (*it)->position.x;
+				int _init_y = (*it)->position.y;
+
+				for (int y = (*it)->position.y; y < (*it)->position.y + (*it)->height; ++y)
+				{
+					for (int x = (*it)->position.x; x < (*it)->position.x + (*it)->width; ++x)
+					{
+						if (main_container->part[x + main_container->width * y] != '.')
+						{
+							main_container->part[x + main_container->width * y] = (*it)->part[(x - _init_x) + (*it)->width * (y - _init_y)];
+						}
+					}
+				}
+			}
+		}
 	}
 
-	void PrintMap()
+	const void PrintMap() const
 	{
 		for (int y = 0; y != main_container->height; y++)
 		{
