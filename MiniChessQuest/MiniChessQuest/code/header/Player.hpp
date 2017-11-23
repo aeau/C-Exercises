@@ -1,0 +1,4 @@
+#ifndef PLAYER_HEADER
+#define PLAYER_HEADER
+
+#endif //PLAYER_HEADER
