@@ -17,7 +17,7 @@ public:
 		prev_y = y = 0;
 	}
 
-	Vector2(float _x, float _y)
+	Vector2(const float & _x, const float & _y)
 	{
 		prev_x = x = _x;
 		prev_y = y = _y;

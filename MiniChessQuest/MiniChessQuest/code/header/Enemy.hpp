@@ -2,6 +2,7 @@
 #define ENEMY_HEADER
 
 #include "Entity.hpp"
+#include "Move.hpp"
 
 class Enemy : public Entity
 {

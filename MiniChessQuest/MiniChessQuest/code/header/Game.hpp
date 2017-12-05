@@ -11,6 +11,7 @@
 #include "Grid.hpp"
 #include "Entity.hpp"
 #include "Enemy.hpp"
+#include "Player.hpp"
 
 class Game
 {

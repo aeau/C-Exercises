@@ -145,20 +145,22 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="code\header\Action.hpp" />
     <ClInclude Include="code\header\Cell.hpp" />
     <ClInclude Include="code\header\Enemy.hpp" />
     <ClInclude Include="code\header\Entity.hpp" />
     <ClInclude Include="code\header\Game.hpp" />
     <ClInclude Include="code\header\Grid.hpp" />
+    <ClInclude Include="code\header\Move.hpp" />
     <ClInclude Include="code\header\Player.hpp" />
     <ClInclude Include="code\header\Vector2.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="code\source\Cell.cpp" />
     <ClCompile Include="code\source\Enemy.cpp" />
-    <ClCompile Include="code\source\Entity.cpp" />
     <ClCompile Include="code\source\Game.cpp" />
     <ClCompile Include="code\source\Grid.cpp" />
+    <ClCompile Include="code\source\Move.cpp" />
     <ClCompile Include="code\source\Player.cpp" />
     <ClCompile Include="MiniChessQuest.cpp" />
   </ItemGroup>

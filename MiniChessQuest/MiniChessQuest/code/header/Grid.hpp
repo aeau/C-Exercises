@@ -24,7 +24,7 @@ public:
 	void Clear();
 	inline void SetCell(const int & _x, const int & _y, const char s) { map[_x + width * _y]->inner = s; }
 	inline void SetCell(const Vector2 & pos, const char s) { map[pos.x + width * pos.y]->inner = s; }
-
+	inline const char & GetCell(const Vector2 & pos) { return map[pos.x + width * pos.y]->GetCell(); }
 
 private:
 	void PrintDefaultLine();

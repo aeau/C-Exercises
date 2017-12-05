@@ -51,6 +51,7 @@ void Game::AddGameObject(const std::string & type)
 	}
 	else if (type == "Player")
 	{
-
+		gameobjects.push_back(std::unique_ptr<Player>(new Player())); //CREATES NEW OBJECT
+		gameobjects.back()->SetPosition(x, y);
 	}
 }

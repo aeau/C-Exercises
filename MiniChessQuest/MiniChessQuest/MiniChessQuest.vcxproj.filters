@@ -39,6 +39,12 @@
     <ClInclude Include="code\header\Vector2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="code\header\Action.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\header\Move.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MiniChessQuest.cpp">
@@ -53,13 +59,13 @@
     <ClCompile Include="code\source\Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="code\source\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="code\source\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="code\source\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\source\Move.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
