@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code\header\Action.hpp" />
+    <ClInclude Include="code\header\ActionPattern.hpp" />
     <ClInclude Include="code\header\Cell.hpp" />
     <ClInclude Include="code\header\Enemy.hpp" />
     <ClInclude Include="code\header\Entity.hpp" />
