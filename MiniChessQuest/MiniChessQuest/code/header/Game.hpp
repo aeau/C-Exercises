@@ -5,13 +5,14 @@
 #include <list>
 #include <vector>
 #include <string>
-#include <random>
+//#include <random>
 #include <iostream>
 
 #include "Grid.hpp"
 #include "Entity.hpp"
 #include "Enemy.hpp"
 #include "Player.hpp"
+#include "Random.hpp"
 
 class Game
 {
@@ -40,7 +41,7 @@ private:
 	int height;
 
 	//For randoms
-	std::mt19937 random_generator;
+	//std::mt19937 random_generator;
 
 };
 

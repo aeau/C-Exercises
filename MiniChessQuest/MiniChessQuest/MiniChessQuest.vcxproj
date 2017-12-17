@@ -154,6 +154,7 @@
     <ClInclude Include="code\header\Grid.hpp" />
     <ClInclude Include="code\header\Move.hpp" />
     <ClInclude Include="code\header\Player.hpp" />
+    <ClInclude Include="code\header\Random.hpp" />
     <ClInclude Include="code\header\Vector2.hpp" />
   </ItemGroup>
   <ItemGroup>

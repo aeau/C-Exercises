@@ -38,20 +38,24 @@ void Game::Render()
 
 void Game::AddGameObject(const std::string & type)
 {
-	std::uniform_int_distribution<int> aux(0, width - 1);
-	std::uniform_int_distribution<int> aux_2(0, height - 1);
-	int x = aux(random_generator);
-	int y = aux_2(random_generator);
+	//std::uniform_int_distribution<int> aux(0, width - 1);
+	//std::uniform_int_distribution<int> aux_2(0, height - 1);
+	//int x = aux(random_generator);
+	//int y = aux_2(random_generator);
+
+	Vector2 pos = Basic::Random::getInstance().RandomVector2(width - 1, height - 2);
 
 	//basic for now
 	if (type == "Enemy")
 	{
 		gameobjects.push_back(std::unique_ptr<Enemy>(new Enemy())); //CREATES NEW OBJECT
-		gameobjects.back()->SetPosition(x, y);
+		gameobjects.back()->SetPosition(pos);
+		grid->SetCell(gameobjects.back()->GetPosition(), gameobjects.back()->symbol);
 	}
 	else if (type == "Player")
 	{
 		gameobjects.push_back(std::unique_ptr<Player>(new Player())); //CREATES NEW OBJECT
-		gameobjects.back()->SetPosition(x, y);
+		gameobjects.back()->SetPosition(pos);
+		grid->SetCell(gameobjects.back()->GetPosition(), gameobjects.back()->symbol);
 	}
 }

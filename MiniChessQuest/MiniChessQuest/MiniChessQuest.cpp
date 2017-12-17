@@ -46,6 +46,8 @@ int main()
 	game->AddGameObject("Enemy");
 	game->AddGameObject("Enemy");
 
+	game->Render();
+
 	while (!game->GetExit())
 	{
 		game->PlayerUpdate();

@@ -48,6 +48,9 @@
     <ClInclude Include="code\header\ActionPattern.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="code\header\Random.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MiniChessQuest.cpp">
