@@ -3,6 +3,7 @@
 
 #include "Vector2.hpp"
 #include "Action.hpp"
+#include "ActionPattern.hpp"
 #include <memory>
 #include <list>
 
@@ -10,20 +11,23 @@ class Entity
 {
 public:
 
-	typedef std::list<std::shared_ptr<Action>> actionSequence;
-	typedef std::vector<actionSequence> actionSequences;
-	actionSequences possible_actions;
+	//typedef std::list<std::shared_ptr<Action>> actionSequence;
+	//typedef std::vector<actionSequence> actionSequences;
+	//actionSequences possible_actions;
+	std::shared_ptr<ActionPattern> possible_actions;
+
 
 	char symbol;
 	mutable std::unique_ptr<Vector2> position;
 
 private:
 
-	actionSequences valid_actions; //TODO: CHECK HERE
+	//actionSequences valid_actions; //TODO: CHECK HERE
+
 
 public:
 	Entity() {}
-	~Entity() { possible_actions.clear(); }
+	~Entity() { }
 
 	virtual void NextMove() = 0;
 	inline virtual void SetPosition(const Vector2 & value) { position->x = value.x; position->y = value.y; }

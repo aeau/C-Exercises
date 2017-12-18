@@ -38,14 +38,15 @@ int main()
 
 	Game * game = new Game(10, 10);
 	
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
-	game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
+	//game->AddGameObject("Enemy");
 
+	game->AddGameObject("Player");
 	game->Render();
 
 	while (!game->GetExit())
@@ -56,6 +57,8 @@ int main()
 	}
 
 	delete game;
+
+	std::cout << "THANK YOU FOR TRYING!" << std::endl;
 
     return 0;
 }

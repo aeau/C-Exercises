@@ -21,6 +21,7 @@ void Move::Perform(Entity & owner)
 	owner.SetPosition(additive + owner.GetPosition());
 }
 
+///Test if the move is actually valid
 bool Move::Test(Grid & current_map, Entity & owner)
 {
 	Vector2 np = additive + owner.GetPosition();

@@ -17,7 +17,7 @@
 class Game
 {
 public:
-	typedef std::list<std::unique_ptr<Entity>> l_GameObjects;
+	typedef std::list<std::shared_ptr<Entity>> l_GameObjects;
 
 	std::unique_ptr<Grid> grid; //Grid of the game
 	l_GameObjects gameobjects; //Current gameobjects in the game
@@ -40,8 +40,7 @@ private:
 	int width;
 	int height;
 
-	//For randoms
-	//std::mt19937 random_generator;
+	std::shared_ptr<Player> player;
 
 };
 

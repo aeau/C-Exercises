@@ -38,15 +38,23 @@ public:
 
 	///Add a temporal action as a sequence or inserting in previously created sequence
 	///When thee uses are over the temporal action is removed
-	void TemporalAction() 
-	{
-		//TODO:
-	}
-	void TemporalSequence() 
+	inline void TemporalAction() 
 	{
 		//TODO:
 	}
 
+	inline void TemporalSequence() 
+	{
+		//TODO:
+	}
+
+	inline void PerformSequence(int pos, Entity & owner)
+	{
+		for (actionSequence::iterator iter = possible_actions[pos].begin(); iter != possible_actions[pos].end(); ++iter)
+		{
+			(*iter)->Perform(owner);
+		}
+	}
 
 private:
 

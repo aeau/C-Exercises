@@ -13,7 +13,11 @@ public:
 public:
 
 	virtual void NextMove();
+	void SetSelection(int action);
 
+private:
+
+	int action;
 };
 
 #endif //PLAYER_HEADER
